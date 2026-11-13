@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NOTMOD provides affordable AI-powered cybersecurity solutions for small businesses and startups.">
+<title>NOTMOD | AI-Powered Cybersecurity</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #071a35;
+    --blue: #1677e8;
+    --cyan: #55c7ed;
+    --ink: #10233f;
+    --muted: #64748b;
+    --light: #f3f7fc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font: 700 28px 'Space Grotesk';
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    color: #dce9f7;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.nav-btn {
+    background: var(--blue);
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 8px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background:
+        radial-gradient(circle at 80% 30%, #123e70, transparent 40%),
+        linear-gradient(130deg, #06172f, #0b315c);
+    color: white;
+    padding: 90px 0 55px;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.tag {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font: 700 clamp(42px, 5vw, 65px)/1.1 'Space Grotesk';
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    color: #c5d7ea;
+    margin: 25px 0;
+    font-size: 16px;
+    max-width: 540px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, #1677e8, #26a6e9);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #7894b3;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: #ffffff15;
+}
+
+/* HERO VISUAL */
+
+.hero-visual {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.shield {
+    width: 190px;
+    height: 220px;
+    background: linear-gradient(145deg, #5de2ff, #0874dd);
+    clip-path: polygon(50% 0, 94% 18%, 88% 68%, 50% 100%, 12% 68%, 6% 18%);
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 15px 30px #00a5ff55);
+}
+
+.shield-inner {
+    width: 90px;
+    height: 90px;
+    border: 4px solid #69dafa;
+    border-radius: 25px;
+    display: grid;
+    place-items: center;
+    color: #7be5ff;
+    font-size: 55px;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    color: var(--ink);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px #00132d66;
+    min-width: 205px;
+    font-size: 12px;
+}
+
+.floating-card small {
+    display: block;
+    color: var(--muted);
+}
+
+.card-one {
+    top: 35px;
+    right: 0;
+}
+
+.card-two {
+    bottom: 35px;
+    left: 0;
+}
+
+.status {
+    color: #159c6d;
+    font-weight: 800;
+}
+
+/* COMMON SECTIONS */
+
+section {
+    scroll-margin-top: 75px;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.section-tag {
+    color: var(--blue);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.section h2 {
+    font: 700 clamp(32px, 4vw, 46px)/1.15 'Space Grotesk';
+    letter-spacing: -1.5px;
+}
+
+.section h2 span {
+    color: var(--blue);
+}
+
+.section-intro {
+    color: var(--muted);
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+/* PROBLEM */
+
+.problem {
+    background: white;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.problem-text {
+    color: var(--muted);
+}
+
+.problem-text p + p {
+    margin-top: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid #e0e9f3;
+    border-radius: 13px;
+    background: white;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #16375b15;
+}
+
+.card-number {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.card h3 {
+    font: 700 19px 'Space Grotesk';
+    margin: 15px 0 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* FEATURES */
+
+.features {
+    background: var(--light);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    padding: 26px;
+    background: white;
+    border: 1px solid #e4edf6;
+    border-radius: 13px;
+    transition: .2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #16375b15;
+}
+
+.feature-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: #e6f4ff;
+    color: var(--blue);
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.feature-card h3 {
+    font: 700 17px 'Space Grotesk';
+    margin: 17px 0 8px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* HOW IT WORKS */
+
+.how {
+    background: white;
+}
+
+.steps {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.step {
+    padding: 25px;
+    border-left: 3px solid var(--blue);
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.step-number {
+    color: var(--blue);
+    font: 700 30px 'Space Grotesk';
+}
+
+.step h3 {
+    margin: 10px 0;
+    font: 700 18px 'Space Grotesk';
+}
+
+.step p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* PRICING */
+
+.pricing {
+    background: linear-gradient(135deg, #071a35, #0c315c);
+    color: white;
+}
+
+.pricing h2 {
+    color: white;
+}
+
+.pricing .section-intro {
+    color: #bbd0e6;
+}
+
+.price-card {
+    background: white;
+    color: var(--ink);
+    max-width: 470px;
+    margin: 40px auto 0;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px #00152f55;
+}
+
+.price-label {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.price {
+    font: 700 45px 'Space Grotesk';
+    margin-top: 15px;
+}
+
+.price span {
+    font: 500 14px 'DM Sans';
+    color: var(--muted);
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.price-card li {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #41546c;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: #17a477;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.price-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: var(--muted);
+    margin-top: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-grid > div > p {
+    color: var(--muted);
+    margin-top: 18px;
+}
+
+.contact-form {
+    background: var(--light);
+    padding: 28px;
+    border: 1px solid #e0e9f3;
+    border-radius: 13px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 17px;
+    border: 1px solid #d8e3ef;
+    border-radius: 8px;
+    font: 14px 'DM Sans';
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px #1677e822;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+#formMessage {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #06172f;
+    color: #9bb1ca;
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    color: white;
+    font: 700 22px 'Space Grotesk';
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--cyan);
+}
+
+footer p {
+    font-size: 12px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width: 750px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-grid,
+    .problem-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .hero-visual {
+        min-height: 310px;
+    }
+
+    .cards,
+    .feature-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section h2 {
+        font-size: 35px;
+    }
+
+    .card-one {
+        right: 0;
+    }
+
+    .card-two {
+        left: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<nav class="container">
+    <a href="#home" class="logo">NOT<span>MOD</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#problem">Our Solution</a>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-btn">Get Started →</a>
+    </div>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+    <div>
+        <div class="tag">AI-POWERED CYBERSECURITY</div>
+
+        <h1>
+            Secure Your Business.<br>
+            <span>Grow Without Fear.</span>
+        </h1>
+
+        <p>
+            Meet NOTMOD – affordable, AI-powered cybersecurity
+            designed for small businesses and startups.
+            Detect potential threats, receive real-time alerts,
+            and protect your digital assets without needing
+            a dedicated IT security team.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn btn-primary">
+                Get Early Access →
+            </a>
+
+            <a href="#features" class="btn btn-outline">
+                Explore Features
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="shield">
+            <div class="shield-inner">✓</div>
+        </div>
+
+        <div class="floating-card card-one">
+            <strong>⌁ Threat Monitoring</strong>
+            <small>Security activity overview</small>
+        </div>
+
+        <div class="floating-card card-two">
+            <strong>✓ Security Status</strong>
+            <small>Protection dashboard concept</small>
+            <span class="status">ACTIVE</span>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="section problem" id="problem">
+<div class="container">
+
+    <div class="problem-grid">
+        <div>
+            <div class="section-tag">THE CHALLENGE</div>
+            <h2>
+                Cybersecurity Shouldn't Be
+                <span>Complicated.</span>
+            </h2>
+        </div>
+
+        <div class="problem-text">
+            <p>
+                Small businesses and startups face increasing
+                cybersecurity threats, data breaches, phishing
+                attacks, and other IT-related challenges.
+            </p>
+
+            <p>
+                Many businesses lack the technical expertise,
+                resources, and budget required to maintain
+                reliable digital security.
+            </p>
+
+            <p>
+                <strong>
+                    NOTMOD aims to make cybersecurity
+                    affordable, simple, and accessible.
+                </strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <span class="card-number">01</span>
+            <h3>Limited Resources</h3>
+            <p>
+                Small businesses often cannot afford
+                dedicated cybersecurity professionals.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="card-number">02</span>
+            <h3>Complex Security Tools</h3>
+            <p>
+                Traditional security platforms can be
+                difficult for non-technical users.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="card-number">03</span>
+            <h3>Growing Cyber Threats</h3>
+            <p>
+                Unnoticed suspicious activities can
+                put sensitive business information at risk.
+            </p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="section features" id="features">
+<div class="container">
+
+    <div class="section-tag">WHY CHOOSE NOTMOD</div>
+
+    <h2>
+        Smarter Protection.<br>
+        <span>Simpler Security.</span>
+    </h2>
+
+    <p class="section-intro">
+        Essential cybersecurity capabilities designed
+        around the needs of small businesses and startups.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>AI-Powered Threat Detection</h3>
+            <p>
+                Identify potentially suspicious activity
+                through intelligent threat monitoring.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">◉</div>
+            <h3>Real-Time Alerts</h3>
+            <p>
+                Receive timely notifications about
+                potential cyber threats.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">▦</div>
+            <h3>Easy Dashboard</h3>
+            <p>
+                Manage and understand security information
+                through a simple interface.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⬡</div>
+            <h3>Data Protection</h3>
+            <p>
+                Help safeguard sensitive business
+                information and digital assets.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">₹</div>
+            <h3>Affordable Pricing</h3>
+            <p>
+                Budget-conscious subscription plans
+                for growing businesses.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">↗</div>
+            <h3>Built for Growing Businesses</h3>
+            <p>
+                A flexible cybersecurity approach
+                that can evolve with your business.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="how">
+<div class="container">
+
+    <div class="section-tag">HOW IT WORKS</div>
+
+    <h2>
+        Security Made <span>Simple.</span>
+    </h2>
+
+    <p class="section-intro">
+        Our intended platform experience makes
+        cybersecurity easier for everyday business users.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Set Up Your Account</h3>
+            <p>
+                Get started with a simple onboarding
+                process for your business.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Monitor Security</h3>
+            <p>
+                Review security activity and potential
+                threats through your dashboard.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Respond to Threats</h3>
+            <p>
+                Understand alerts and take appropriate
+                action to reduce security risks.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+<div class="container" style="text-align:center">
+
+    <div class="section-tag">AFFORDABLE SUBSCRIPTION</div>
+
+    <h2>
+        Cybersecurity That Fits
+        <span>Your Budget.</span>
+    </h2>
+
+    <p class="section-intro" style="margin:auto">
+        Affordable cybersecurity designed for small
+        businesses and early-stage startups.
+    </p>
+
+    <div class="price-card" style="text-align:left">
+
+        <div class="price-label">STARTER PLAN</div>
+
+        <div class="price">
+            ₹1,000 <span>/ month</span>
+        </div>
+
+        <p style="color:#64748b;font-size:13px">
+            ₹12,000 per year
+        </p>
+
+        <ul>
+            <li>AI-assisted threat monitoring concept</li>
+            <li>Real-time security alert experience</li>
+            <li>User-friendly dashboard concept</li>
+            <li>Designed for small businesses</li>
+            <li>Affordable subscription model</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary"
+           style="display:block;text-align:center">
+            Register Your Interest →
+        </a>
+
+        <p class="price-note">
+            Indicative project pricing. Final plans and
+            features are subject to product development
+            and customer validation.
+        </p>
+
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="container about-content">
+
+    <div class="section-tag">OUR MISSION</div>
+
+    <h2>
+        Making Cybersecurity
+        <span>Accessible to Everyone.</span>
+    </h2>
+
+    <p>
+        NOTMOD is an early-stage cybersecurity venture
+        focused on helping small businesses, startups,
+        and growing organizations protect their digital
+        information through affordable, AI-powered,
+        and easy-to-use security solutions.
+    </p>
+
+    <p>
+        Our mission is to reduce cybersecurity complexity,
+        improve awareness, and help businesses grow
+        with greater confidence.
+    </p>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+<div class="container contact-grid">
+
+    <div>
+        <div class="section-tag">GET IN TOUCH</div>
+
+        <h2>
+            Let's Make Your Business
+            <span>More Secure.</span>
+        </h2>
+
+        <p>
+            Interested in NOTMOD? Want early access,
+            a product demonstration, or an opportunity
+            to share feedback?
+        </p>
+
+        <p style="margin-top:20px">
+            Join us on our journey to make cybersecurity
+            affordable and accessible for growing businesses.
+        </p>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name"
+               placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+               placeholder="you@example.com" required>
+
+        <label for="business">Business Name</label>
+        <input type="text" id="business"
+               placeholder="Your business or startup">
+
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="4"
+                  placeholder="Tell us about your requirements"></textarea>
+
+        <button type="submit" class="btn btn-primary">
+            Submit Interest →
+        </button>
+
+        <p id="formMessage">
+            Demo form. Connect a form service or backend
+            to receive actual enquiries.
+        </p>
+
+    </form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container footer-content">
+
+    <div class="footer-logo">
+        NOT<span>MOD</span>
+    </div>
+
+    <p>
+        © <span id="year"></span> NOTMOD.
+        AI-Powered Cybersecurity.
+    </p>
+
+    <a href="#home">Back to Top ↑</a>
+
+</div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// Mobile navigation
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuToggle.textContent = isOpen ? "×" : "☰";
+    menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+// Close mobile menu after clicking a link
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+// Automatic footer year
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Demo contact form
+document.getElementById("contactForm").addEventListener(
+    "submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+
+        alert(
+            "Thank you, " + name +
+            "! Your interest in NOTMOD is appreciated. " +
+            "This is a demo form and does not send your details."
+        );
+
+        this.reset();
+    }
+);
+
+</script>
+
+</body>
+</html>
